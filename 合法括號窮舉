@@ -1,0 +1,10 @@
+n = int(input())
+ele = ['(' if i < n else ')' for i in range(n * 2)]
+def switch(lst, start, end):
+    for i in range(start, end, -1):
+        tmp = lst[i - 1]
+        lst[i - 1] = lst[i]
+        lst[i] = tmp
+        
+    if start < len(lst) - 1:
+        return switch(lst, index + 1, end + 1)
